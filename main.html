@@ -1,0 +1,26 @@
+<html>
+<head>
+	<script src="CSVParser2.js"></script>
+
+
+<script>
+	var openFile = function(event) {
+		var input = event.target;
+
+		var reader = new FileReader();
+		reader.onload = function(){
+			var text = reader.result;
+			var node = document.getElementById('output');
+			
+			//document.write(text);
+			parser(text) 
+	    };
+	    reader.readAsText(input.files[0]);
+	 };
+</script>
+
+</head>
+<body>
+	<input type='file' accept='text/plain' onchange='openFile(event)'><br>
+</body>
+</html>
